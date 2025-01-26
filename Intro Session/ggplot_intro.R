@@ -1,4 +1,4 @@
-# Code Folding Shortcuts----
+# Code Folding Shortcuts ----
 # Collapse — Option+Command+L or Alt+L for PC
 # Expand — Shift+Option+Command+L or Shift+Alt+L for PC
 # Collapse All — Option+Command+O or Alt+O for PC
@@ -14,7 +14,9 @@ library(tidyverse)
 # mpg data frame found in ggplot2 ----
 library(ggplot2)
 ggplot2::mpg
+view()
 str(mpg)
+head(mpg)
 ?mpg # or 
 help(mpg)
 
@@ -43,6 +45,7 @@ ggplot(mpg, aes(x = displ, y = hwy, alpha = class)) +
 # shape aesthetic controls the shape of the points
 ggplot(mpg, aes(x = displ, y = hwy, shape = class)) + 
   geom_point()
+
 # What happened to the SUVs? 
 # ggplot2 will only use six shapes at a time. 
 # By default, additional groups will go unplotted when you use the shape
@@ -147,7 +150,7 @@ ggplot(mpg, mapping = aes(x = displ, y = hwy, color = class)) +
 # Color Palettes
 ggplot(mpg, mapping = aes(x = displ, y = hwy, color = class)) + 
   geom_point() +
-  scale_color_brewer(palette = "Set1") 
+  scale_color_brewer(palette = "Set3") 
   
 # Bar Graphs and histograms
 # bar graph based on a categorical variable (e.g. class) ----
@@ -156,7 +159,7 @@ ggplot(mpg, aes(x = class)) +
 # count is a new value obtained through statistical transformation
 
 # Bar graph with flipped bars
-ggplot(mpg, aes(x=class)) +
+ggplot(mpg, aes(x = class)) +
   geom_bar() +
   coord_flip()
 
