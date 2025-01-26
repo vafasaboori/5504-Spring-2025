@@ -1,0 +1,65 @@
+---
+title: "Class Exercise"
+format: html
+editor: visual
+---
+
+**In-Class Exercise: Exploring ggplot2 with the diamonds Dataset**
+
+**Objective:**
+
+Apply what you’ve learned about ggplot2 to explore and visualize the diamonds dataset. This exercise will help you practice mapping aesthetics, customizing plots, and using facets to uncover trends in the data.
+
+**Instructions:**
+
+1.  **Explore the Data**
+
+Explore the "diamonds" dataset.
+
+Take note of key variables such as carat, price, cut, and color.
+
+**Tasks**
+
+**Task 1: Scatter Plot**
+
+Create a scatter plot with the following requirements:
+
+	•	x-axis: carat (weight of the diamond).
+
+	•	y-axis: price (price of the diamond).
+
+	•	Map the color of the points to clarity (diamond clarity).
+
+	•	Add a trend line using geom_smooth() with se = FALSE (hide confidence intervals).
+
+	•	Customize the title and axis labels using labs().
+
+**Task 2: Faceted Plot**
+
+Use facets to compare the relationship between carat and price across different diamond cut categories:
+
+	•	Use facet_wrap() to create subplots for each cut.
+
+	•	Arrange the facets in 2 rows.
+
+	•	Apply the theme_classic() theme to the plot for a clean appearance.
+
+**Task 3: Bonus Challenge**
+
+	•	Use the coord_cartesian() function to focus on diamonds with carat between 0 and 3.
+
+	•	Add annotations to highlight trends in one of the cut categories.
+
+	•	Customize the color palette using scale_color_brewer().
+
+**Hints**
+
+	•	Use the ?diamonds function to learn more about the dataset.
+
+	•	If you encounter overlapping points, try adding alpha = 0.5.
+
+**Expected Time:**
+
+This exercise should take **15–30 minutes** to complete.
+
+Feel free to collaborate with classmates or ask for help if needed!

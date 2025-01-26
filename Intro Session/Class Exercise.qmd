@@ -1,0 +1,105 @@
+---
+title: "Class Exercise"
+format: html
+editor: visual
+---
+
+**In-Class Exercise: Exploring ggplot2 with the diamonds Dataset**
+
+**Objective:**
+
+Apply what you’ve learned about ggplot2 to explore and visualize the diamonds dataset. This exercise will help you practice mapping aesthetics, customizing plots, and using facets to uncover trends in the data.
+
+**Instructions:**
+
+1.  **Explore the Data**
+
+Explore the "diamonds" dataset.
+
+Take note of key variables such as carat, price, cut, and color.
+
+**Tasks**
+
+**Task 1: Scatter Plot**
+
+Create a scatter plot with the following requirements:
+
+-   **x-axis:** carat (weight of the diamond).
+
+-   **y-axis:** price (price of the diamond).
+
+-   Map the color of the points to clarity (diamond clarity).
+
+-   Add a trend line using geom_smooth() with se = FALSE (hide confidence intervals).
+
+-   Customize the title and axis labels using labs().
+
+**Answer**
+
+-   
+
+```{r setup}
+# Load required libraries
+library(tidyverse)
+
+# Examine the structure and summary of the dataset.
+str(diamonds)  # Check the structure of the dataset
+summary(diamonds)  # View summary statistics
+head(diamonds)  # Preview the first few rows of the dataset
+
+# Create a scatter plot with carat on the x-axis, price on the y-axis, and color mapped to clarity.
+ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(se = FALSE) +  # Add a trend line without confidence intervals
+  labs(
+    title = "Diamond Prices by Carat and Clarity",
+    x = "Carat (Weight)",
+    y = "Price (USD)",
+    color = "Clarity"
+  ) +
+  theme_minimal()
+```
+
+**Task 2: Faceted Plot**
+
+Use facets to compare the relationship between carat and price across different diamond cut categories:
+
+-   Use facet_wrap() to create subplots for each cut.
+
+-   Arrange the facets in 2 rows.
+
+-   Apply the theme_classic() theme to the plot for a clean appearance.
+
+```{r}
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point(alpha = 0.5) +
+  facet_wrap(~ cut, nrow = 2) +  # Create subplots for each cut with 2 rows
+  labs(
+    title = "Faceted Plot: Carat vs. Price by Cut",
+    x = "Carat (Weight)",
+    y = "Price (USD)"
+  ) +
+  theme_minimal()  # Apply a minimal theme
+```
+
+**Task 3: Bonus Challenge**
+
+-   Use the coord_cartesian() function to zoom into the data for diamonds with carat between 0 and 3.
+
+-   Add annotations to highlight trends in one of the cut categories (e.g., the cut with the highest-priced diamonds).
+
+-   Customize the color palette using scale_color_brewer().
+
+```{r}
+ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.5) +
+  coord_cartesian(xlim = c(0, 3)) +  # Zoom into the carat range 0 to 3
+  scale_color_brewer(palette = "Set1") +  # Use a custom color palette
+  labs(
+    title = "Diamond Prices for Carats 0-3 by Cut",
+    x = "Carat (Weight)",
+    y = "Price (USD)",
+    color = "Cut"
+  ) +
+  theme_minimal()
+```

@@ -1,0 +1,32 @@
+---
+title: "R Markdown Intro"
+author: "Vafa Saboori"
+date: "2024-01-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Header 1 (H1)
+* One Star for Italic *
+** Two Stars for Bold Text **
+
+```{r}
+library(tidyverse)
+```
+
+## Header 2 (H2)
+
+1. This is the 1st item
+    - Here is a sub
+    - Here is another
+1. This is the second item
+    1. sub-item 1
+    1. sub-item 2
+1. This is the third item
+<!-- Maybe you want to reorder your list, therefore 1. for all items -->
+
+
+
