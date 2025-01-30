@@ -102,6 +102,7 @@ armands$residuals <- residuals(armands_lm)
 armands$std_residuals <- rstandard(armands_lm)
 
 # Residual plot against x
+library(tidyverse)
 armands %>% ggplot(aes(x = Population, y = residuals)) + 
   geom_point() +
   geom_smooth(method = 'lm', se = FALSE)  # we observe no pattern
