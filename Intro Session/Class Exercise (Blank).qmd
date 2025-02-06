@@ -24,39 +24,47 @@ Take note of key variables such as carat, price, cut, and color.
 
 Create a scatter plot with the following requirements:
 
-	•	x-axis: carat (weight of the diamond).
+```         
+•   x-axis: carat (weight of the diamond).
 
-	•	y-axis: price (price of the diamond).
+•   y-axis: price (price of the diamond).
 
-	•	Map the color of the points to clarity (diamond clarity).
+•   Map the color of the points to clarity (diamond clarity).
 
-	•	Add a trend line using geom_smooth() with se = FALSE (hide confidence intervals).
+•   Add a trend line using geom_smooth() with se = FALSE (hide confidence intervals).
 
-	•	Customize the title and axis labels using labs().
+•   Customize the title and axis labels using labs().
+```
 
 **Task 2: Faceted Plot**
 
 Use facets to compare the relationship between carat and price across different diamond cut categories:
 
-	•	Use facet_wrap() to create subplots for each cut.
+```         
+•   Use facet_wrap() to create subplots for each cut.
 
-	•	Arrange the facets in 2 rows.
+•   Arrange the facets in 2 rows.
 
-	•	Apply the theme_classic() theme to the plot for a clean appearance.
+•   Apply the theme_classic() theme to the plot for a clean appearance.
+```
 
 **Task 3: Bonus Challenge**
 
-	•	Use the coord_cartesian() function to focus on diamonds with carat between 0 and 3.
+```         
+•   Use the coord_cartesian() function to focus on diamonds with carat between 0 and 3.
 
-	•	Add annotations to highlight trends in one of the cut categories.
+•   Add annotations to highlight trends in one of the cut categories.
 
-	•	Customize the color palette using scale_color_brewer().
+•   Customize the color palette using scale_color_brewer().
+```
 
 **Hints**
 
-	•	Use the ?diamonds function to learn more about the dataset.
+```         
+•   Use the ?diamonds function to learn more about the dataset.
 
-	•	If you encounter overlapping points, try adding alpha = 0.5.
+•   If you encounter overlapping points, try adding alpha = 0.5.
+```
 
 **Expected Time:**
 
